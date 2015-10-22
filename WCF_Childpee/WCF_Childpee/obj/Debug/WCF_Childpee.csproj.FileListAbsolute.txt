@@ -1,0 +1,8 @@
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\bin\WCF_Childpee.dll.config
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\bin\WCF_Childpee.dll
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\bin\WCF_Childpee.pdb
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\bin\Database.dll
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\bin\Database.pdb
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\obj\Debug\WCF_Childpee.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\obj\Debug\WCF_Childpee.dll
+C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\WCF_Childpee\obj\Debug\WCF_Childpee.pdb

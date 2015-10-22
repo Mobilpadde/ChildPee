@@ -5,29 +5,48 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Database;
 
 namespace WCF_Childpee
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        ChildpeeDatabase _database = new ChildpeeDatabase();
+        public void RegDevice(int id, string extraditionDate)
         {
-            return string.Format("You entered: {0}", value);
+            _database.RegDevice(id, extraditionDate);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<Device> GetDevices()
         {
-            if (composite == null)
+            return _database.GetDevices();
+        }
+
+        public List<Patient> GetPatients()
+        {
+           return _database.GetPatients();
+        }
+
+        public void RegPatients(int age, int deviceId, int id, string name)
+        {
+            _database.RegPatients(age, deviceId,id,name);
+        }
+
+        public void RemoveDevice(int deviceId)
+        {
             {
-                throw new ArgumentNullException("composite");
+                _database.RemoveDevice(deviceId);
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+        }
+
+        public List<Measurement> GetmesureList()
+        {
+            return _database.GetmesureList();
+        }
+
+        public void AddinformationManually(string manuallyTime, int measurementId, bool value)
+        {
+            _database.AddinformationManually(manuallyTime, measurementId, value);
         }
     }
 }

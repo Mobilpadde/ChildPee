@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Database
 {
-    class Measurement
+    public class Measurement
     {
         public DateTime Time { get; set; }
-        public double Value { get; set; }
-        public int Id { get; set; }
+        public DateTime ManuallyTime { get; set; }
+        public bool Value { get; set; }
+        public int MeasurementId { get; set; }
     }
 }

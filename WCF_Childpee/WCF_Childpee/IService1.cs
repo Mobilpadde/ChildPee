@@ -5,43 +5,34 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Database;
 
 namespace WCF_Childpee
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IService1
     {
 
         [OperationContract]
-        string GetData(int value);
+        void RegDevice(int id, string extraditionDate);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        List<Device> GetDevices();
 
-        // TODO: Add your service operations here
-    }
+        [OperationContract]
+        List<Patient> GetPatients();
 
+        [OperationContract]
+        void RegPatients(int age, int deviceId, int id, string name);
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        [OperationContract]
+        void RemoveDevice(int deviceId);
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        [OperationContract]
+        List<Measurement> GetmesureList();
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        void AddinformationManually(string manuallyTime, int measurementId, bool value);
+
     }
 }
