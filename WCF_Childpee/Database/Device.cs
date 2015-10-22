@@ -7,7 +7,5 @@ namespace Database
     {
         public int Id { get; set; }
         public DateTime ExtraditionDate { get; set; }
-
-
     }
 }

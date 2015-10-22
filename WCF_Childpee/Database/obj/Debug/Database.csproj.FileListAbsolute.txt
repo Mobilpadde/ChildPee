@@ -1,5 +1,4 @@
 C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\Database\bin\Debug\Database.dll
 C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\Database\bin\Debug\Database.pdb
-C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
 C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\Database\obj\Debug\Database.dll
 C:\Users\Martin\Documents\GitHub\ChildPee\WCF_Childpee\Database\obj\Debug\Database.pdb

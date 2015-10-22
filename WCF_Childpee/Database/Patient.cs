@@ -6,8 +6,9 @@ namespace Database
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public int Id { get; set; }
+        public int PatientId { get; set; }
         public int DeviceId { get; set; }
-        public string Device { get; set; }
+        public string Deviceassigned { get; set; }
+
     }
 }

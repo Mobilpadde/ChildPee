@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 using Database;
 
 namespace WCF_Childpee
@@ -27,9 +22,9 @@ namespace WCF_Childpee
            return _database.GetPatients();
         }
 
-        public void RegPatients(int age, int deviceId, int id, string name)
+        public void RegPatients(int age, int deviceId, int id, string name, string deviceassigned)
         {
-            _database.RegPatients(age, deviceId,id,name);
+            _database.RegPatients(age, deviceId, id, name, deviceassigned);
         }
 
         public void RemoveDevice(int deviceId)
@@ -39,9 +34,9 @@ namespace WCF_Childpee
             }
         }
 
-        public List<Measurement> GetmesureList()
+        public List<Measurement> GetmeasureList()
         {
-            return _database.GetmesureList();
+            return _database.GetmeasureList();
         }
 
         public void AddinformationManually(string manuallyTime, int measurementId, bool value)
