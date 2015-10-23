@@ -15,9 +15,15 @@ namespace Database
             new Device {Id = 10004, ExtraditionDate = new DateTime(2007,11,11)},
             new Device {Id = 10005, ExtraditionDate = new DateTime(2015,5,15)},
         };
-        public void RegDevice(int id, string extraditionDate)
+        public int RegDevice(DateTime extraditionDate)
         {
-            Devicelist.Add(new Device{Id = id, ExtraditionDate = DateTime.Parse(extraditionDate)});
+            var device = new Device();
+
+            device.ExtraditionDate = extraditionDate;
+            device.Id = Devicelist.Count + 1;
+
+            Devicelist.Add(device);
+            return device.Id;
         }
 
         public List<Device> GetDevices()
@@ -27,7 +33,7 @@ namespace Database
 
 
         //Patients Section
-        public static List<Patient> Patientlist = new List<Patient>()
+        private static List<Patient> Patientlist = new List<Patient>()
         {
             new Patient{Age = 11, DeviceId = Devicelist[0].Id, PatientId = 20001, Name = "Signe", Deviceassigned = "MK8 Peealarm"},
             new Patient{Age = 7, DeviceId = Devicelist[1].Id, PatientId = 20002, Name = "Morten", Deviceassigned = "MK7 Peealarm"},
@@ -39,12 +45,23 @@ namespace Database
         public List<Patient> GetPatients()
         {
             return Patientlist;
+            
         }
 
-        public void RegPatients(int age, int deviceId, int id, string name, string deviceassigned)
+        public int RegPatients(int age, int deviceId, string name, string deviceassigned)
         {
-            Patientlist.Add(new Patient { Age = age, DeviceId = deviceId, PatientId = id, Name = name, Deviceassigned = deviceassigned});
-           
+            //Patientlist.Add(new Patient { Age = age, DeviceId = deviceId, PatientId = id, Name = name, Deviceassigned = deviceassigned});
+
+            var patient = new Patient();
+
+            patient.DeviceId = deviceId;
+            patient.Age = age;
+            patient.Deviceassigned = deviceassigned;
+            patient.Name = name;
+            patient.PatientId = Patientlist.Count + 1;
+
+            Patientlist.Add(patient);
+            return patient.PatientId;
         }
         public void RemoveDevice(int deviceId)
         {
@@ -57,17 +74,19 @@ namespace Database
             }
         }
 
+
         //Measurement Section
-        private static string Manuallytime = "Not Available";
-        public List<Measurement> Measurementlist = new List<Measurement>()
+
+        private static string manuallytime = "Not Available";
+        private List<Measurement> Measurementlist = new List<Measurement>()
         {
-            new Measurement{ManuallyTime = Manuallytime ,MeasurementId = 30001, Time = new DateTime(15,02,12,02,57,03), Value = true},
-            new Measurement{ManuallyTime = Manuallytime, MeasurementId = 30002, Time = new DateTime(15,02,12,22,46,09), Value = true}  
+            new Measurement{ManuallyTime = manuallytime ,MeasurementId = 30001, Time = new DateTime(15,02,12,02,57,03), Value = true},
+            new Measurement{ManuallyTime = manuallytime, MeasurementId = 30002, Time = new DateTime(15,02,12,22,46,09), Value = true}  
         };
 
         public void AddinformationManually(string manuallyTime, int measurementId, bool value)
         {
-            Measurementlist.Add(new Measurement{ManuallyTime = manuallyTime, MeasurementId = measurementId, Value = value});
+            Measurementlist.Add(new Measurement { ManuallyTime = manuallyTime, MeasurementId = measurementId, Time = DateTime.Parse(manuallyTime), Value = value });
         } 
         public List<Measurement> GetmeasureList()
         {

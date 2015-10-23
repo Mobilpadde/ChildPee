@@ -7,9 +7,9 @@ namespace WCF_Childpee
     public class Service1 : IService1
     {
         ChildpeeDatabase _database = new ChildpeeDatabase();
-        public void RegDevice(int id, string extraditionDate)
+        public int RegDevice(DateTime extraditionDate)
         {
-            _database.RegDevice(id, extraditionDate);
+            return _database.RegDevice(extraditionDate);
         }
 
         public List<Device> GetDevices()
@@ -22,9 +22,9 @@ namespace WCF_Childpee
            return _database.GetPatients();
         }
 
-        public void RegPatients(int age, int deviceId, int id, string name, string deviceassigned)
+        public int RegPatients(int age, int deviceId, string name, string deviceassigned)
         {
-            _database.RegPatients(age, deviceId, id, name, deviceassigned);
+           return _database.RegPatients(age, deviceId,name, deviceassigned);
         }
 
         public void RemoveDevice(int deviceId)

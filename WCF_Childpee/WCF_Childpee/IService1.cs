@@ -10,7 +10,7 @@ namespace WCF_Childpee
     {
 
         [OperationContract]
-        void RegDevice(int id, string extraditionDate);
+        int RegDevice(DateTime extraditionDate);
 
         [OperationContract]
         List<Device> GetDevices();
@@ -19,7 +19,7 @@ namespace WCF_Childpee
         List<Patient> GetPatients();
 
         [OperationContract]
-        void RegPatients(int age, int deviceId, int id, string name, string deviceassigned);
+        int RegPatients(int age, int deviceId, string name, string deviceassigned);
 
         [OperationContract]
         void RemoveDevice(int deviceId);
