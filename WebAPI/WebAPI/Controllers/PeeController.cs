@@ -62,8 +62,6 @@ namespace WebAPI.Controllers
         [HttpGet, ActionName("device")] // Get specific device
         public Device GetDevice(int id)
         {
-            var t = _devices.GetDevices().Find(d => d.Id == id);
-            var g = t;
             return _devices.GetDevices().Find(d => d.Id == id);
         }
 
